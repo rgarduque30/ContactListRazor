@@ -21,12 +21,11 @@ namespace ContactListRazor.Pages.ContactList
         {
             Contact = await _db.Contact.FindAsync(id);
         }
-        public async Task<IActionResult> OnPost(int id)
+        public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                var contact = await _db.Contact.FindAsync(id);
-                contact.ID = Contact.ID;
+                var contact = await _db.Contact.FindAsync(Contact.ID);
                 contact.FirstName = Contact.FirstName;
                 contact.MiddleName = Contact.MiddleName;
                 contact.LastName = Contact.LastName;

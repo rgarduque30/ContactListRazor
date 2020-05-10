@@ -18,7 +18,7 @@ function loadDataTable() {
             {
                 "data": "id",
                 "render": function (data) {
-                    return `<div class="text-center"><a class="btn btn-success text-white" style="width: 55px;" href="/ContactList/Edit?id=${data}">Edit</a>&nbsp;<a class="btn btn-danger text-white" style="width: 70px;" onclick=Delete('/api/Contact?id='+${data})>Delete</a></div>`;
+                    return `<div class="text-center"><a class="btn btn-success text-white" style="width: 55px;" href="/ContactList/Upsert?id=${data}">Edit</a>&nbsp;<a class="btn btn-danger text-white" style="width: 70px;" onclick=Delete('/api/Contact?id='+${data})>Delete</a></div>`;
                 }
             }
         ],
