@@ -21,5 +21,16 @@ namespace ContactListRazor.Pages.ContactList
         {
             Contacts = await _db.Contact.ToListAsync();
         }
+        public async Task<IActionResult> OnPost(int id)
+        {
+            var contact = await _db.Contact.FindAsync(id);
+            if (contact == null) 
+            {
+                return NotFound();
+            }
+            _db.Remove(contact);
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
+        }
     }
 }

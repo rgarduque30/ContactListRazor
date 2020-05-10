@@ -34,7 +34,7 @@
                             <td>@Html.DisplayFor(m => item.LastName)</td>
                             <td class="text-center">
                                 <a class="btn btn-success text-white" asp-page="Edit" asp-route-id="@item.ID">Edit</a>
-                                <button class="btn btn-danger text-white">Delete</button>
+                                <button class="btn btn-danger text-white" onclick="return confirm('Delete record?')" asp-page-handler="Delete" asp-route-id="@item.ID">Delete</button>
                             </td>
                         </tr>
                     }
