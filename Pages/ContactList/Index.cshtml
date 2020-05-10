@@ -7,7 +7,7 @@
         <h2 class="text-info">Contact List</h2>
     </div>
     <div class="col-3">
-        <a class="btn btn-info text-white">Add New Contact</a>
+        <a class="btn btn-info text-white" asp-page="Create">Add New Contact</a>
     </div>
     <div class="col-12">
         <form method="post">
@@ -33,7 +33,7 @@
                             <td>@Html.DisplayFor(m => item.MiddleName)</td>
                             <td>@Html.DisplayFor(m => item.LastName)</td>
                             <td class="text-center">
-                                <a class="btn btn-success text-white">Edit</a>
+                                <a class="btn btn-success text-white" asp-page="Edit" asp-route-id="@item.ID">Edit</a>
                                 <button class="btn btn-danger text-white">Delete</button>
                             </td>
                         </tr>
